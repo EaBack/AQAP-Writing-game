@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var rulesLabel: UILabel!
     
     
+    @IBOutlet weak var pickLevel: UIPickerView!
+    
+    var levels = ["Easy", "Intermediat", "Hard"]
+    var timelimits = [60,40,20]
+    var selectedLevel: String?
+    var selectedTimeLimit: Int?
+    
     
     
     override func viewDidLoad() {
@@ -29,6 +36,7 @@ class ViewController: UIViewController {
 
     @IBAction func StartGame(_ sender: UIButton) {
         performSegue(withIdentifier: segueIdGoToGame, sender: self)
+        
     }
     
     @IBAction func EndGame(_ sender: Any, forEvent event: UIEvent) {
